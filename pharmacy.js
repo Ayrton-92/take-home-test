@@ -12,6 +12,16 @@ export class Pharmacy {
   }
   updateBenefitValue() {
     for (var i = 0; i < this.drugs.length; i++) {
+      if (this.drugs[i].name === "Dafalgan") {
+        if (this.drugs[i].benefit > 0) {
+          this.drugs[i].benefit -= 2; 
+        }
+        this.drugs[i].expiresIn -= 1;
+        if (this.drugs[i].expiresIn < 0 && this.drugs[i].benefit > 0) {
+          this.drugs[i].benefit -= 2; 
+        }
+        continue; 
+      }
       if (
         this.drugs[i].name != "Herbal Tea" &&
         this.drugs[i].name != "Fervex"
