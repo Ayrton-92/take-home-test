@@ -14,13 +14,13 @@ export class Pharmacy {
     for (var i = 0; i < this.drugs.length; i++) {
         if (this.drugs[i].name === "Dafalgan") {
         if (this.drugs[i].benefit > 0) {
-          this.drugs[i].benefit -= 2; 
+          this.drugs[i].benefit -= 2; // Dafalgan se dégrade deux fois plus vite
         }
         this.drugs[i].expiresIn -= 1;
         if (this.drugs[i].expiresIn < 0 && this.drugs[i].benefit > 0) {
-          this.drugs[i].benefit -= 2;
+          this.drugs[i].benefit -= 2; // Se dégrade encore plus vite après expiration
         }
-        continue; 
+        continue;
       }
       if (
         this.drugs[i].name != "Herbal Tea" &&

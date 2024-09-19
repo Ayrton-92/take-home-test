@@ -7,6 +7,7 @@ describe("Pharmacy", () => {
     );
   });
 
+   // Nouveau test pour Dafalgan
    it("should degrade Dafalgan benefit twice as fast as normal drugs", () => {
     const pharmacy = new Pharmacy([new Drug("Dafalgan", 10, 20)]);
     const updatedDrugs = pharmacy.updateBenefitValue();
